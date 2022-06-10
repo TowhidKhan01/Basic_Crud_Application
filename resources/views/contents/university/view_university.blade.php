@@ -17,8 +17,8 @@
     <div class="container">
         <div class="text-center">
             <h1 class="p-5">CRUD Application</h1>
-            <a href="{{route('viewUniversity')}}" class="btn btn-rounded btn-success mb-5 mt-2">University</a>
-            <a href="{{route('create')}}" class="btn btn-rounded btn-success mb-5 mt-2">Add Student</a>
+            <a href="{{route('addUniversity')}}" class="btn btn-rounded btn-success mb-5 mt-2">Add University</a>
+            <!-- <a href="{{route('create')}}" class="btn btn-rounded btn-success mb-5 mt-2">Add Student</a> -->
         </div>
 
 
@@ -26,25 +26,19 @@
             <thead>
                 <tr>
                     <th scope="col">Sl</th>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">Email</th>
+                    <th scope="col">University Name</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($student as $key=>$student)
+                @foreach($university as $key=>$university)
                 <tr>
                     <td>{{$key+1}}</td>
-                    <td>{{$student->firstname}}</td>
-                    <td>{{$student->lastname}}</td>
-                    <td>{{$student->email}}</td>
-                    <td>
-
-                        <a href="{{route('edit',$student->id)}}" class="btn btn-info">Edit</a>
-                        <a href="{{route('delete',$student->id)}}" class="btn btn-danger" id="delete">Delete</a>
-                        <a href="{{route('show',$student->id)}}" class="btn btn-success" id="details">Show Details</a>
-                    </td>
+                    <td>{{$university->university_name}}</td>
+                    <!-- <a href="{{route('edit',$student->id)}}" class="btn btn-info">Edit</a>
+                    <a href="{{route('delete',$student->id)}}" class="btn btn-danger" id="delete">Delete</a><a href="{{route('delete',$student->id)}}" class="btn btn-danger" id="delete">Add Students</a>
+                    <a href="{{route('show',$student->id)}}" class="btn btn-success" id="details">Show Details</a>
+                    </td> -->
                 </tr>
 
                 @endforeach
